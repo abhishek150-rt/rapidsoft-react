@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./App.css"
 
-// import Shop from './components/march1/Cart/Shop'
+import Shop from './components/march1/Cart/Shop'
 import YoutubeForm from './components/march4/YoutubeForm'
 
 
@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <YoutubeForm />
-        {/* <Shop /> */}
+        <Shop />
         {/* <Form/> */}
         {/* <Refer /> */}
         {/* <Users /> */}
