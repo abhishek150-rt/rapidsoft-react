@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+a.nav-link{
+  cursor:pointer
+}
+ul li {
+  text-align: left;
+  list-style: none;
+}
+
+.button {
+  border: none;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.secondary {
+  color: blue;
+  text-align: center;
+
+}
+
+.ErrorBoundary .text-center {
+  color: red;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+}
+
+
+
+.col:hover {
+  transform: translateY(5px);
+}
+
+button {
+  width: 200px;
+  /* max-width: 150px; */
+  padding: 05px;
+  color: white;
+  border: none;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background: #1520a6;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.col h4 {
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  color: red;
+}
+
+
+input:not([type="checkbox"]) {
+  /* width: 300px;
+  max-width: 250px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  /* outline: none; */
+  padding: 10px 5px;
+}
+
+/* button.disabled{
+  background-color: grey; */
+/* } */
+
+.comp{
+  display: inline-block;
+  width: 250px;
+  margin:0px 1px;
+  border: 2px solid blue;
+  padding: 20px;
+  text-align: center;
+}
+@media screen and (max-width:950px) {
+  .col {
+    width: 40%;
+  }
+
+  button {
+    padding: 05px;
+    color: white;
+  }
+
+}
+
+.form-section{
+  width: 450px;
+  /* border:2px solid red; */
+  text-align: left;
+  margin: 10px auto;
+}

@@ -1,0 +1,151 @@
+import React, { Component } from 'react'
+import axios from "axios"
+import Navigate from './Navigate'
+import Store from './Store'
+export default class Get extends Component {
+    constructor(props) {
+        super(props)
+        // initializing state values for output and error
+        this.state = {
+            products: [],
+            errorMsg: ""
+        }
+    }
+
+    // Usign mouting lifecycle method update the state
+    async componentDidMount() {
+        let isMounted = true;
+        const header = {
+            "access-control-allow-origin": "*",
+            "Content-type": "application/json; charset=UTF-8"
+        }
+        if (isMounted) {
+            try {
+                let response = await axios.get("https://fakestoreapi.com/products/", { header });
+                if (response) {
+
+                    this.setState({
+                        products: response.data
+                    })
+                }
+            }
+            catch (err) {
+                this.setState({
+                    errorMsg: "Unable to fetch the data right now!!!!! Please retry later."
+                })
+                console.log(err)
+            }
+            return () => {
+                isMounted = false;
+            };
+        }
+
+    }
+    getMenProducts = async () => {
+        try {
+            let response = await axios.get("https://fakestoreapi.com/products/category/men's clothing");
+            if (response) {
+             
+                this.setState({
+                    products: response.data
+                })
+            }
+        }
+        catch (err) {
+            this.setState({
+                errorMsg: "Unable to fetch the data right now!!!!! Please retry later."
+            })
+            console.log(err)
+        }
+
+    }
+    getWomenProducts = async () => {
+        try {
+            let response = await axios.get("https://fakestoreapi.com/products/category/women's clothing");
+            if (response) {
+             
+                this.setState({
+                    products: response.data
+                })
+            }
+        }
+        catch (err) {
+            this.setState({
+                errorMsg: "Unable to fetch the data right now!!!!! Please retry later."
+            })
+            console.log(err)
+        }
+
+    }
+
+     getElectronicsProducts = async () => {
+        try {
+            let response = await axios.get("https://fakestoreapi.com/products/category/electronics");
+            if (response) {
+             
+                this.setState({
+                    products: response.data
+                })
+            }
+        }
+        catch (err) {
+            this.setState({
+                errorMsg: "Unable to fetch the data right now!!!!! Please retry later."
+            })
+            console.log(err)
+        }
+
+    }
+    getJwelleryProducts = async () => {
+        try {
+            let response = await axios.get("https://fakestoreapi.com/products/category/jewelery");
+            if (response) {
+                this.setState({
+                    products: response.data
+                })
+            }
+        }
+        catch (err) {
+            this.setState({
+                errorMsg: "Unable to fetch the data right now!!!!! Please retry later."
+            })
+            console.log(err)
+        }
+    }
+
+    getAllProducts = async () => {
+        try {
+            let response = await axios.get("https://fakestoreapi.com/products/");
+            if (response) {
+                this.setState({
+                    products: response.data
+                })
+            }
+        }
+        catch (err) {
+            this.setState({
+                errorMsg: "Unable to fetch the data right now!!!!! Please retry later."
+            })
+            console.log(err)
+        }
+
+    }
+
+    render() {
+        return (
+            <>
+
+
+             
+                <div className="button-group">
+                <Navigate innertext="All Products" func={this.getAllProducts} />
+                    <Navigate innertext="Men's Clothing" func={this.getMenProducts} />
+                    <Navigate innertext="Women's Clothing" func={this.getWomenProducts} />
+                    <Navigate innertext="Electronics" func={this.getElectronicsProducts} />
+                    <Navigate innertext="Jwellery" func={this.getJwelleryProducts} />
+                </div>
+                <Store res={this.state} />
+            </>
+        )
+    }
+}

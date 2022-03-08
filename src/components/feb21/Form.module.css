@@ -1,0 +1,24 @@
+.primaryStyle{
+    width:60%;
+    margin:auto;
+    padding:20px 0;
+}
+
+.inputStyle{
+    width:50%;
+    padding:5px;
+    border: 1px solid grey;
+    outline: none;
+    margin: 10px 0;
+}
+
+.buttonStyle{
+    display: block;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
